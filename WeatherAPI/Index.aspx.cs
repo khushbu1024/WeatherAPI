@@ -29,6 +29,7 @@ namespace WeatherAPI
             {
                 string json = client.DownloadString(url);
                 WeatherInfo weatherInfo = (new JavaScriptSerializer()).Deserialize<WeatherInfo>(json);
+                //
                 
                 lblTempMin.Text = string.Format("{0}°С", Math.Round(weatherInfo.main.temp_min, 1));
                 lblTempMax.Text = string.Format("{0}°С", Math.Round(weatherInfo.main.temp_max, 1));
